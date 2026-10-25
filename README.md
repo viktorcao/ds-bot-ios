@@ -43,22 +43,19 @@ DS_GATEWAY_USER=me DS_GATEWAY_PASS='换成强密码' \
 
 完整的部署说明（开机自启、HTTPS、反向代理、公网访问、排错）见 **[docs/server-setup.md](docs/server-setup.md)**。
 
-### 2. 构建 App
+### 2. 编译并安装到 iPhone
+
+App 没有上架 App Store，需要自己用 Xcode 编译安装，免费的 Apple ID 就够（签名每 7 天过期，重装一次即可）。
 
 ```bash
 brew install xcodegen
+git clone https://github.com/<你的用户名>/ds-bot-ios.git && cd ds-bot-ios
+printf 'DSBOT_BUNDLE_ID = com.yourname.dsbot\nDEVELOPMENT_TEAM = ABCDE12345\n' > Config/Local.xcconfig   # 换成你自己的
 xcodegen generate
-open DSBot.xcodeproj
+open DSBot.xcodeproj      # 选你的 iPhone，⌘R
 ```
 
-在 Xcode 里选你的 iPhone 或模拟器运行。真机需要自己的签名团队和包名：新建不入库的 `Config/Local.xcconfig`：
-
-```
-DSBOT_BUNDLE_ID = com.yourname.dsbot
-DEVELOPMENT_TEAM = ABCDE12345
-```
-
-重新 `xcodegen generate` 即可。免费个人账号签名的 App 7 天后过期，需要重新运行一次。细节见 [docs/development.md](docs/development.md)。
+包名必须全球唯一；手机要先打开"开发者模式"，第一次运行后到 设置 → 通用 → VPN 与设备管理 里信任自己的开发者。**完整步骤（怎么查 Team ID、命令行安装、免费账号限制、常见报错）见 [docs/install-iphone.md](docs/install-iphone.md)。**
 
 ### 3. 连接
 
@@ -116,7 +113,8 @@ DEVELOPMENT_TEAM = ABCDE12345
 |---|---|
 | [docs/server-setup.md](docs/server-setup.md) | 服务端部署、认证、HTTPS、开机自启、排错 |
 | [docs/protocol.md](docs/protocol.md) | App 用到的接口、登录流程、审批事件通道 |
-| [docs/development.md](docs/development.md) | 构建、签名、测试、代码结构 |
+| [docs/install-iphone.md](docs/install-iphone.md) | 编译并安装到 iPhone（签名、开发者模式、常见报错） |
+| [docs/development.md](docs/development.md) | 构建、测试、代码结构 |
 | [server/ds-gateway.mjs](server/ds-gateway.mjs) | 认证网关 |
 
 ## 依赖与来源

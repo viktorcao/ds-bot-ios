@@ -13,6 +13,8 @@ open DSBot.xcodeproj
 
 ## 签名与包名
 
+> 装到真机的完整步骤见 [install-iphone.md](install-iphone.md)，下面是要点。
+
 默认包名是 `com.example.dsbot`、没有签名团队，所以直接在真机上运行会失败。用你自己的账号覆盖，新建不入库的 `Config/Local.xcconfig`：
 
 ```
