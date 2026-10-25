@@ -76,7 +76,7 @@ open DSBot.xcodeproj      # 选你的 iPhone，⌘R
 |---|---|
 | 只在家里局域网用 | 网关可以不设账号密码。此时网关只给**内网地址**的客户端发登录令牌，公网来源一律 403。仍建议设密码 |
 | 想在外面用 | 网关设 `DS_GATEWAY_USER` / `DS_GATEWAY_PASS`，**并且必须走 HTTPS**（App 对公网域名不允许明文 HTTP，且基本认证的密码是明文传输）。HTTPS 可由 Caddy / nginx 终结，也可以让网关直接加载证书 |
-| 最稳妥 | 不暴露公网，用 [Tailscale](https://tailscale.com) 或 WireGuard 组内网，App 里填内网地址 |
+| 最稳妥 | 不暴露公网，用 [Tailscale](https://tailscale.com) 或 WireGuard 组内网，App 里填内网地址，步骤见 [docs/tailscale.md](docs/tailscale.md) |
 
 增加认证的具体步骤、Caddy / nginx 配置、systemd 开机自启在 [docs/server-setup.md](docs/server-setup.md#认证)。几条硬性提醒：
 
@@ -112,6 +112,7 @@ open DSBot.xcodeproj      # 选你的 iPhone，⌘R
 | 文件 | 内容 |
 |---|---|
 | [docs/server-setup.md](docs/server-setup.md) | 服务端部署、认证、HTTPS、开机自启、排错 |
+| [docs/tailscale.md](docs/tailscale.md) | 用 Tailscale 在外面访问（不开公网端口） |
 | [docs/protocol.md](docs/protocol.md) | App 用到的接口、登录流程、审批事件通道 |
 | [docs/install-iphone.md](docs/install-iphone.md) | 编译并安装到 iPhone（签名、开发者模式、常见报错） |
 | [docs/development.md](docs/development.md) | 构建、测试、代码结构 |

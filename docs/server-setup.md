@@ -87,7 +87,7 @@ DS_GATEWAY_USER=me DS_GATEWAY_PASS='换成强随机密码' \
 | **A. 只在局域网用** | 不设账号密码，`http://内网IP:8731` | 同一网络里任何人都能打开并控制 Bot。家里可以，公司或公共 Wi-Fi 不行 |
 | **B. 局域网 + 密码** | 设 `DS_GATEWAY_USER/PASS`，仍用 `http://内网IP:8731` | 密码在局域网明文传输；比 A 好得多 |
 | **C. 公网 + HTTPS + 密码** | 设账号密码，并让 HTTPS 生效（见第 4 节） | 暴露在互联网上，会被扫描和爆破；必须强密码并加限速 |
-| **D. VPN（推荐）** | 用 Tailscale / WireGuard，App 里填 VPN 内地址，网关按 A 或 B | 最稳妥；iPhone 要装对应的 VPN 客户端 |
+| **D. VPN（推荐）** | 用 Tailscale / WireGuard，App 里填 VPN 内地址。**Tailscale 的完整步骤见 [tailscale.md](tailscale.md)**；注意 tailnet 地址不算"内网"，网关必须设账号密码（按 B） | 最稳妥；iPhone 要装对应的 VPN 客户端 |
 
 ### 增加认证 / 改密码
 
