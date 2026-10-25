@@ -49,7 +49,7 @@ App 没有上架 App Store，需要自己用 Xcode 编译安装，免费的 Appl
 
 ```bash
 brew install xcodegen
-git clone https://github.com/<你的用户名>/ds-bot-ios.git && cd ds-bot-ios
+git clone https://github.com/viktorcao/ds-bot-ios.git && cd ds-bot-ios
 printf 'DSBOT_BUNDLE_ID = com.yourname.dsbot\nDEVELOPMENT_TEAM = ABCDE12345\n' > Config/Local.xcconfig   # 换成你自己的
 xcodegen generate
 open DSBot.xcodeproj      # 选你的 iPhone，⌘R

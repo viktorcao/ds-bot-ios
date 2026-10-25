@@ -14,7 +14,7 @@ App 没有上架 App Store，需要自己用 Xcode 编译并装到手机上。**
 ### 1. 取代码并生成工程
 
 ```bash
-git clone https://github.com/<你的用户名>/ds-bot-ios.git
+git clone https://github.com/viktorcao/ds-bot-ios.git
 cd ds-bot-ios
 xcodegen generate
 ```
