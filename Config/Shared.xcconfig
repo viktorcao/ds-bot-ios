@@ -1,0 +1,10 @@
+// 签名与包名的默认值。要用自己的 Apple 开发者账号，在同目录新建 Local.xcconfig 覆盖（不入库）：
+//
+//   DSBOT_BUNDLE_ID = com.yourname.dsbot
+//   DEVELOPMENT_TEAM = ABCDE12345
+//
+// Team ID 在 developer.apple.com → Membership 里查看。
+DSBOT_BUNDLE_ID = com.example.dsbot
+DEVELOPMENT_TEAM =
+
+#include? "Local.xcconfig"

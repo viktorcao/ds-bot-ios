@@ -1,0 +1,12 @@
+# Xcode 工程由 `xcodegen generate` 生成，不入库
+DSBot.xcodeproj/
+build/
+build-device/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+.DS_Store
+Config/Local.xcconfig
+*.xcresult
+*.fpk
+node_modules/
